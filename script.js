@@ -1,5 +1,7 @@
 var cvs = document.getElementById('vis');
 var ctx = cvs.getContext('2d');
+var tun = document.getElementById('tuner');
+var gn = document.getElementById('gain');
 var fDisp = document.getElementById('freq-display');
 var mBox = document.getElementById('msg-box');
 var sig = document.getElementById('sig-bar');
@@ -14,7 +16,17 @@ blk.style.display = 'none';
 running = true;
 draw();
 });
-
+tun.addEventListener('input', function(){
+if(!running)
+return;
+var val = parseInt(tun.value);
+var fVal = (val / 10).toFixed(1);
+fDisp.innerHTML = fVal + ' <span class="mhz">MHz</span>';
+});
+gn.addEventListener('input', function(){
+if(!running)
+return;
+});
 function draw(){
 if(!running)
 return;
@@ -31,7 +43,6 @@ ctx.moveTo(x, y);
 ctx.lineTo(cvs.width, y);
 ctx.stroke();
 }
-
 window.addEventListener('resize', function(){
 cvs.width = cvs.offsetWidth;
 cvs.height = cvs.offsetHeight;
