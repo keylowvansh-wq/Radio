@@ -30,6 +30,56 @@ position: relative;
 width: 100%;
 height: 100%;
 }
+#vis{
+width: 100%;
+height: 100%;
+opacity: 0.6;
+}
+#overlay{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+padding: 50px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+pointer-events: none;
+z-index: 10;
+}
+#freq-display{
+font-family: 'VT323', monospace;
+font-size: 6rem;
+font-weight: bold;
+color: #ffb000;
+letter-spacing: 8px;
+}
+.mhz{
+font-family: 'Special Elite', cursive;
+font-size: 2rem;
+opacity: 0.6;
+margin-left: 10px;
+}
+#msg-box{
+font-size: 1.4rem;
+color: #ffb000;
+min-height: 60px;
+letter-spacing: 2px;
+}
+#sig-meter{
+width: 100%;
+height: 12px;
+background: #111;
+border: 1px solid #ffb000;
+position: relative;
+}
+#sig-bar{
+width: 0%;
+height: 100%;
+background: #ffb000;
+transition: width 0.1s;
+}
 #blocker{
 position: fixed;
 top: 0;
@@ -55,4 +105,4 @@ opacity: 0.4;
 50%{
 opacity: 1; 
  }
-}
+} 
